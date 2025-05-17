@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>System Settings</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body class="bg-gray-100 font-[Poppins,sans-serif]">
+  <div class="min-h-screen flex">
+    <!-- Sidebar -->
+    <div class="bg-blue-800 text-white w-64 py-4 flex flex-col">
+      <div class="px-4 py-4 border-b border-blue-700">
+        <h1 class="text-2xl font-bold">Admin</h1>
+      </div>
+      <nav class="flex-1 px-2 py-4 space-y-2">
+        <a href="index.html" class="flex items-center px-4 py-3 hover:bg-blue-700 rounded-lg">
+          <i class="fas fa-tachometer-alt mr-3"></i> Dashboard
+        </a>
+        <a href="users.html" class="flex items-center px-4 py-3 hover:bg-blue-700 text-gray-300 rounded-lg">
+          <i class="fas fa-user-shield mr-3"></i> Accounts & Roles
+        </a>
+        <a href="employees.html" class="flex items-center px-4 py-3 hover:bg-blue-700 text-gray-300 rounded-lg">
+          <i class="fas fa-users mr-3"></i> Employees
+        </a>
+        <a href="payroll.html" class="flex items-center px-4 py-3 hover:bg-blue-700 text-gray-300 rounded-lg">
+          <i class="fas fa-money-bill-wave mr-3"></i> Payroll
+        </a>
+        <a href="departments.html" class="flex items-center px-4 py-3 hover:bg-blue-700 text-gray-300 rounded-lg">
+          <i class="fas fa-building mr-3"></i> Departments
+        </a>
+        <a href="job_titles.html" class="flex items-center px-4 py-3 hover:bg-blue-700 text-gray-300 rounded-lg">
+          <i class="fas fa-briefcase mr-3"></i> Job Titles
+        </a>
+        <a href="reports.html" class="flex items-center px-4 py-3 hover:bg-blue-700 text-gray-300 rounded-lg">
+          <i class="fas fa-chart-bar mr-3"></i> Reports
+        </a>
+        <a href="notifications.html" class="flex items-center px-4 py-3 hover:bg-blue-700 text-gray-300 rounded-lg">
+          <i class="fas fa-bell mr-3"></i> Alerts
+        </a>
+        <a href="settings.html" class="flex items-center px-4 py-3 bg-blue-700 rounded-lg">
+          <i class="fas fa-cogs mr-3"></i> System Settings
+        </a>
+      </nav>
+      <div class="px-4 py-4 border-t border-blue-700">
+        <a href="login.html" class="flex items-center text-gray-300 hover:text-white">
+          <i class="fas fa-sign-out-alt mr-3"></i> Logout
+        </a>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-1 flex flex-col overflow-hidden">
+      <!-- Navbar -->
+    <header class="bg-white shadow-sm">
+      <div class="flex items-center justify-between px-6 py-4">
+        <h2 class="text-xl font-semibold text-gray-800">System Settings</h2>
+        <div class="flex items-center space-x-4">
+          <button class="relative">
+            <i class="fas fa-bell text-gray-600 text-xl"></i>
+            <span class="absolute top-0 right-0 -mt-1 -mr-1 px-2 py-0.5 bg-red-500 text-white text-xs rounded-full">3</span>
+          </button>
+          <div class="flex items-center">
+            <img class="h-8 w-8 rounded-full" src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg" alt="Admin" />
+            <span class="ml-2 text-gray-700">Admin</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Page Content -->
+    <main class="flex-1 overflow-y-auto p-6 space-y-6">
+      <!-- General Settings -->
+      <div class="bg-white rounded-lg shadow p-6">
+        <h3 class="text-lg font-semibold mb-4">General Settings</h3>
+        <form action="#" method="POST" class="space-y-6">
+          <div class="space-y-2">
+            <label for="email-server" class="text-gray-700">Email Server</label>
+            <input type="text" id="email-server" name="email-server" class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Enter Email Server Address" />
+          </div>
+          <div class="space-y-2">
+            <label for="system-config" class="text-gray-700">System Configuration</label>
+            <textarea id="system-config" name="system-config" rows="4" class="w-full p-3 border border-gray-300 rounded-lg" placeholder="Enter system configuration..."></textarea>
+          </div>
+          <div class="flex justify-end">
+            <button type="submit" class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+              <i class="fas fa-save mr-2"></i>Save Changes
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Security Settings -->
+      <div class="bg-white rounded-lg shadow p-6">
+        <h3 class="text-lg font-semibold mb-4">Security Settings</h3>
+        <form action="#" method="POST" class="space-y-6">
+          <div class="space-y-2">
+            <label for="user-auth" class="text-gray-700">User Authentication</label>
+            <select id="user-auth" name="user-auth" class="w-full p-3 border border-gray-300 rounded-lg">
+              <option value="password">Username and Password</option>
+              <option value="two-factor">Two-Factor Authentication</option>
+            </select>
+          </div>
+          <div class="space-y-2">
+            <label for="session-timeout" class="text-gray-700">Session Timeout (minutes)</label>
+            <input type="number" id="session-timeout" name="session-timeout" min="1" max="60" value="30" class="w-full p-3 border border-gray-300 rounded-lg" />
+          </div>
+          <div class="flex justify-end">
+            <button type="submit" class="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+              <i class="fas fa-shield-alt mr-2"></i>Save Settings
+            </button>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
