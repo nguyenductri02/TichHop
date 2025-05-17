@@ -5301,11 +5301,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Van Sinh\\source\\repos\\CeoMemo\\CeoMemo.csproj",
+      "projectUniqueName": "C:\\Users\\Van Sinh\\Documents\\CeoMemo\\CeoMemo.csproj",
       "projectName": "CeoMemo",
-      "projectPath": "C:\\Users\\Van Sinh\\source\\repos\\CeoMemo\\CeoMemo.csproj",
+      "projectPath": "C:\\Users\\Van Sinh\\Documents\\CeoMemo\\CeoMemo.csproj",
       "packagesPath": "C:\\Users\\Van Sinh\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Van Sinh\\source\\repos\\CeoMemo\\obj\\",
+      "outputPath": "C:\\Users\\Van Sinh\\Documents\\CeoMemo\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
