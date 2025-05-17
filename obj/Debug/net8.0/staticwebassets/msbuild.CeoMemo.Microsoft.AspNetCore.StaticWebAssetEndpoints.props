@@ -1,0 +1,76 @@
+﻿<Project>
+  <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/CeoMemo/html/hr_manager/departments.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\html\hr_manager\departments.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-85SwoELjQrlDIy85Lp5IrvjWdPQGF8iPLh4UfX4r0xU="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"16585"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u002285SwoELjQrlDIy85Lp5IrvjWdPQGF8iPLh4UfX4r0xU=\u0022"},{"Name":"Last-Modified","Value":"Wed, 16 Apr 2025 04:45:33 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/CeoMemo/html/hr_manager/departments.ry1s89xf9c.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\html\hr_manager\departments.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ry1s89xf9c"},{"Name":"integrity","Value":"sha256-85SwoELjQrlDIy85Lp5IrvjWdPQGF8iPLh4UfX4r0xU="},{"Name":"label","Value":"_content/CeoMemo/html/hr_manager/departments.html"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"16585"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u002285SwoELjQrlDIy85Lp5IrvjWdPQGF8iPLh4UfX4r0xU=\u0022"},{"Name":"Last-Modified","Value":"Wed, 16 Apr 2025 04:45:33 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/CeoMemo/html/hr_manager/employees.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\html\hr_manager\employees.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-99ta0R/0JK\u002B9dXsxxO4dEHPGL0geuawgsSI6vBBOTWI="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"13491"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u002299ta0R/0JK\u002B9dXsxxO4dEHPGL0geuawgsSI6vBBOTWI=\u0022"},{"Name":"Last-Modified","Value":"Wed, 16 Apr 2025 04:41:45 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/CeoMemo/html/hr_manager/employees.pwj5k3r0m9.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\html\hr_manager\employees.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"pwj5k3r0m9"},{"Name":"integrity","Value":"sha256-99ta0R/0JK\u002B9dXsxxO4dEHPGL0geuawgsSI6vBBOTWI="},{"Name":"label","Value":"_content/CeoMemo/html/hr_manager/employees.html"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"13491"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u002299ta0R/0JK\u002B9dXsxxO4dEHPGL0geuawgsSI6vBBOTWI=\u0022"},{"Name":"Last-Modified","Value":"Wed, 16 Apr 2025 04:41:45 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/CeoMemo/html/hr_manager/index.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\html\hr_manager\index.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-dLpyUnjCTyE88W76XYftD6VlhR4T6DVhls41vZDRkMw="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"7529"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022dLpyUnjCTyE88W76XYftD6VlhR4T6DVhls41vZDRkMw=\u0022"},{"Name":"Last-Modified","Value":"Wed, 16 Apr 2025 04:40:06 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/CeoMemo/html/hr_manager/index.obtsnww5jw.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\html\hr_manager\index.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"obtsnww5jw"},{"Name":"integrity","Value":"sha256-dLpyUnjCTyE88W76XYftD6VlhR4T6DVhls41vZDRkMw="},{"Name":"label","Value":"_content/CeoMemo/html/hr_manager/index.html"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"7529"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022dLpyUnjCTyE88W76XYftD6VlhR4T6DVhls41vZDRkMw=\u0022"},{"Name":"Last-Modified","Value":"Wed, 16 Apr 2025 04:40:06 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/CeoMemo/html/hr_manager/job_titles.c852mumn96.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\html\hr_manager\job_titles.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"c852mumn96"},{"Name":"integrity","Value":"sha256-BEtXOGjBTsXIllfe9u8ChCSonzRCLuEY5AArK7YitKo="},{"Name":"label","Value":"_content/CeoMemo/html/hr_manager/job_titles.html"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"14642"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022BEtXOGjBTsXIllfe9u8ChCSonzRCLuEY5AArK7YitKo=\u0022"},{"Name":"Last-Modified","Value":"Wed, 16 Apr 2025 04:42:38 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/CeoMemo/html/hr_manager/job_titles.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\html\hr_manager\job_titles.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-BEtXOGjBTsXIllfe9u8ChCSonzRCLuEY5AArK7YitKo="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"14642"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022BEtXOGjBTsXIllfe9u8ChCSonzRCLuEY5AArK7YitKo=\u0022"},{"Name":"Last-Modified","Value":"Wed, 16 Apr 2025 04:42:38 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/CeoMemo/html/hr_manager/notifications.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\html\hr_manager\notifications.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-kUA3x\u002BQMfKepHlgQsNlZZRF9QCuFLQrmwGFAkBWm2F0="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"6691"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022kUA3x\u002BQMfKepHlgQsNlZZRF9QCuFLQrmwGFAkBWm2F0=\u0022"},{"Name":"Last-Modified","Value":"Wed, 16 Apr 2025 05:03:45 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/CeoMemo/html/hr_manager/notifications.nqj2bpouu0.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\html\hr_manager\notifications.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"nqj2bpouu0"},{"Name":"integrity","Value":"sha256-kUA3x\u002BQMfKepHlgQsNlZZRF9QCuFLQrmwGFAkBWm2F0="},{"Name":"label","Value":"_content/CeoMemo/html/hr_manager/notifications.html"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"6691"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022kUA3x\u002BQMfKepHlgQsNlZZRF9QCuFLQrmwGFAkBWm2F0=\u0022"},{"Name":"Last-Modified","Value":"Wed, 16 Apr 2025 05:03:45 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/CeoMemo/html/hr_manager/reports.adc15wddy6.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\html\hr_manager\reports.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"adc15wddy6"},{"Name":"integrity","Value":"sha256-IlazgvQmEObtluitePX2eQROO\u002BrVixskfjGkiVsv4ns="},{"Name":"label","Value":"_content/CeoMemo/html/hr_manager/reports.html"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"10231"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022IlazgvQmEObtluitePX2eQROO\u002BrVixskfjGkiVsv4ns=\u0022"},{"Name":"Last-Modified","Value":"Wed, 16 Apr 2025 04:43:32 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/CeoMemo/html/hr_manager/reports.html">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\html\hr_manager\reports.html'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-IlazgvQmEObtluitePX2eQROO\u002BrVixskfjGkiVsv4ns="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"10231"},{"Name":"Content-Type","Value":"text/html"},{"Name":"ETag","Value":"\u0022IlazgvQmEObtluitePX2eQROO\u002BrVixskfjGkiVsv4ns=\u0022"},{"Name":"Last-Modified","Value":"Wed, 16 Apr 2025 04:43:32 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+  </ItemGroup>
+</Project>

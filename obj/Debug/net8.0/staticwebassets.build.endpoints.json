@@ -1,0 +1,498 @@
+{
+  "Version": 1,
+  "ManifestType": "Build",
+  "Endpoints": [
+    {
+      "Route": "html/hr_manager/departments.html",
+      "AssetFile": "html/hr_manager/departments.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16585"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"85SwoELjQrlDIy85Lp5IrvjWdPQGF8iPLh4UfX4r0xU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 04:45:33 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-85SwoELjQrlDIy85Lp5IrvjWdPQGF8iPLh4UfX4r0xU="
+        }
+      ]
+    },
+    {
+      "Route": "html/hr_manager/departments.ry1s89xf9c.html",
+      "AssetFile": "html/hr_manager/departments.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16585"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"85SwoELjQrlDIy85Lp5IrvjWdPQGF8iPLh4UfX4r0xU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 04:45:33 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ry1s89xf9c"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-85SwoELjQrlDIy85Lp5IrvjWdPQGF8iPLh4UfX4r0xU="
+        },
+        {
+          "Name": "label",
+          "Value": "html/hr_manager/departments.html"
+        }
+      ]
+    },
+    {
+      "Route": "html/hr_manager/employees.html",
+      "AssetFile": "html/hr_manager/employees.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13491"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"99ta0R/0JK+9dXsxxO4dEHPGL0geuawgsSI6vBBOTWI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 04:41:45 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-99ta0R/0JK+9dXsxxO4dEHPGL0geuawgsSI6vBBOTWI="
+        }
+      ]
+    },
+    {
+      "Route": "html/hr_manager/employees.pwj5k3r0m9.html",
+      "AssetFile": "html/hr_manager/employees.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13491"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"99ta0R/0JK+9dXsxxO4dEHPGL0geuawgsSI6vBBOTWI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 04:41:45 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "pwj5k3r0m9"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-99ta0R/0JK+9dXsxxO4dEHPGL0geuawgsSI6vBBOTWI="
+        },
+        {
+          "Name": "label",
+          "Value": "html/hr_manager/employees.html"
+        }
+      ]
+    },
+    {
+      "Route": "html/hr_manager/index.html",
+      "AssetFile": "html/hr_manager/index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7529"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dLpyUnjCTyE88W76XYftD6VlhR4T6DVhls41vZDRkMw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 04:40:06 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-dLpyUnjCTyE88W76XYftD6VlhR4T6DVhls41vZDRkMw="
+        }
+      ]
+    },
+    {
+      "Route": "html/hr_manager/index.obtsnww5jw.html",
+      "AssetFile": "html/hr_manager/index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7529"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dLpyUnjCTyE88W76XYftD6VlhR4T6DVhls41vZDRkMw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 04:40:06 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "obtsnww5jw"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-dLpyUnjCTyE88W76XYftD6VlhR4T6DVhls41vZDRkMw="
+        },
+        {
+          "Name": "label",
+          "Value": "html/hr_manager/index.html"
+        }
+      ]
+    },
+    {
+      "Route": "html/hr_manager/job_titles.c852mumn96.html",
+      "AssetFile": "html/hr_manager/job_titles.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14642"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"BEtXOGjBTsXIllfe9u8ChCSonzRCLuEY5AArK7YitKo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 04:42:38 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "c852mumn96"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-BEtXOGjBTsXIllfe9u8ChCSonzRCLuEY5AArK7YitKo="
+        },
+        {
+          "Name": "label",
+          "Value": "html/hr_manager/job_titles.html"
+        }
+      ]
+    },
+    {
+      "Route": "html/hr_manager/job_titles.html",
+      "AssetFile": "html/hr_manager/job_titles.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14642"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"BEtXOGjBTsXIllfe9u8ChCSonzRCLuEY5AArK7YitKo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 04:42:38 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-BEtXOGjBTsXIllfe9u8ChCSonzRCLuEY5AArK7YitKo="
+        }
+      ]
+    },
+    {
+      "Route": "html/hr_manager/notifications.html",
+      "AssetFile": "html/hr_manager/notifications.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6691"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"kUA3x+QMfKepHlgQsNlZZRF9QCuFLQrmwGFAkBWm2F0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 05:03:45 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-kUA3x+QMfKepHlgQsNlZZRF9QCuFLQrmwGFAkBWm2F0="
+        }
+      ]
+    },
+    {
+      "Route": "html/hr_manager/notifications.nqj2bpouu0.html",
+      "AssetFile": "html/hr_manager/notifications.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6691"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"kUA3x+QMfKepHlgQsNlZZRF9QCuFLQrmwGFAkBWm2F0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 05:03:45 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "nqj2bpouu0"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-kUA3x+QMfKepHlgQsNlZZRF9QCuFLQrmwGFAkBWm2F0="
+        },
+        {
+          "Name": "label",
+          "Value": "html/hr_manager/notifications.html"
+        }
+      ]
+    },
+    {
+      "Route": "html/hr_manager/reports.adc15wddy6.html",
+      "AssetFile": "html/hr_manager/reports.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10231"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IlazgvQmEObtluitePX2eQROO+rVixskfjGkiVsv4ns=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 04:43:32 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "adc15wddy6"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-IlazgvQmEObtluitePX2eQROO+rVixskfjGkiVsv4ns="
+        },
+        {
+          "Name": "label",
+          "Value": "html/hr_manager/reports.html"
+        }
+      ]
+    },
+    {
+      "Route": "html/hr_manager/reports.html",
+      "AssetFile": "html/hr_manager/reports.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10231"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IlazgvQmEObtluitePX2eQROO+rVixskfjGkiVsv4ns=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 04:43:32 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-IlazgvQmEObtluitePX2eQROO+rVixskfjGkiVsv4ns="
+        }
+      ]
+    }
+  ]
+}

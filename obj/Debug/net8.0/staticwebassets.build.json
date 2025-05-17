@@ -1,0 +1,640 @@
+{
+  "Version": 1,
+  "Hash": "5IV9Nm64a/DII0TAG2HN1MjkIwXw4n4s22dQu5+NTVo=",
+  "Source": "CeoMemo",
+  "BasePath": "_content/CeoMemo",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "CeoMemo\\wwwroot",
+      "Source": "CeoMemo",
+      "ContentRoot": "C:\\Users\\Van Sinh\\source\\repos\\CeoMemo\\wwwroot\\",
+      "BasePath": "_content/CeoMemo",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Van Sinh\\source\\repos\\CeoMemo\\wwwroot\\html\\hr_manager\\departments.html",
+      "SourceId": "CeoMemo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Van Sinh\\source\\repos\\CeoMemo\\wwwroot\\",
+      "BasePath": "_content/CeoMemo",
+      "RelativePath": "html/hr_manager/departments#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ry1s89xf9c",
+      "Integrity": "85SwoELjQrlDIy85Lp5IrvjWdPQGF8iPLh4UfX4r0xU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\html\\hr_manager\\departments.html"
+    },
+    {
+      "Identity": "C:\\Users\\Van Sinh\\source\\repos\\CeoMemo\\wwwroot\\html\\hr_manager\\employees.html",
+      "SourceId": "CeoMemo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Van Sinh\\source\\repos\\CeoMemo\\wwwroot\\",
+      "BasePath": "_content/CeoMemo",
+      "RelativePath": "html/hr_manager/employees#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "pwj5k3r0m9",
+      "Integrity": "99ta0R/0JK+9dXsxxO4dEHPGL0geuawgsSI6vBBOTWI=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\html\\hr_manager\\employees.html"
+    },
+    {
+      "Identity": "C:\\Users\\Van Sinh\\source\\repos\\CeoMemo\\wwwroot\\html\\hr_manager\\index.html",
+      "SourceId": "CeoMemo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Van Sinh\\source\\repos\\CeoMemo\\wwwroot\\",
+      "BasePath": "_content/CeoMemo",
+      "RelativePath": "html/hr_manager/index#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "obtsnww5jw",
+      "Integrity": "dLpyUnjCTyE88W76XYftD6VlhR4T6DVhls41vZDRkMw=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\html\\hr_manager\\index.html"
+    },
+    {
+      "Identity": "C:\\Users\\Van Sinh\\source\\repos\\CeoMemo\\wwwroot\\html\\hr_manager\\job_titles.html",
+      "SourceId": "CeoMemo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Van Sinh\\source\\repos\\CeoMemo\\wwwroot\\",
+      "BasePath": "_content/CeoMemo",
+      "RelativePath": "html/hr_manager/job_titles#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "c852mumn96",
+      "Integrity": "BEtXOGjBTsXIllfe9u8ChCSonzRCLuEY5AArK7YitKo=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\html\\hr_manager\\job_titles.html"
+    },
+    {
+      "Identity": "C:\\Users\\Van Sinh\\source\\repos\\CeoMemo\\wwwroot\\html\\hr_manager\\notifications.html",
+      "SourceId": "CeoMemo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Van Sinh\\source\\repos\\CeoMemo\\wwwroot\\",
+      "BasePath": "_content/CeoMemo",
+      "RelativePath": "html/hr_manager/notifications#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "nqj2bpouu0",
+      "Integrity": "kUA3x+QMfKepHlgQsNlZZRF9QCuFLQrmwGFAkBWm2F0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\html\\hr_manager\\notifications.html"
+    },
+    {
+      "Identity": "C:\\Users\\Van Sinh\\source\\repos\\CeoMemo\\wwwroot\\html\\hr_manager\\reports.html",
+      "SourceId": "CeoMemo",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Van Sinh\\source\\repos\\CeoMemo\\wwwroot\\",
+      "BasePath": "_content/CeoMemo",
+      "RelativePath": "html/hr_manager/reports#[.{fingerprint}]?.html",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "adc15wddy6",
+      "Integrity": "IlazgvQmEObtluitePX2eQROO+rVixskfjGkiVsv4ns=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\html\\hr_manager\\reports.html"
+    }
+  ],
+  "Endpoints": [
+    {
+      "Route": "html/hr_manager/departments.html",
+      "AssetFile": "C:\\Users\\Van Sinh\\source\\repos\\CeoMemo\\wwwroot\\html\\hr_manager\\departments.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16585"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"85SwoELjQrlDIy85Lp5IrvjWdPQGF8iPLh4UfX4r0xU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 04:45:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-85SwoELjQrlDIy85Lp5IrvjWdPQGF8iPLh4UfX4r0xU="
+        }
+      ]
+    },
+    {
+      "Route": "html/hr_manager/departments.ry1s89xf9c.html",
+      "AssetFile": "C:\\Users\\Van Sinh\\source\\repos\\CeoMemo\\wwwroot\\html\\hr_manager\\departments.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "16585"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"85SwoELjQrlDIy85Lp5IrvjWdPQGF8iPLh4UfX4r0xU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 04:45:33 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ry1s89xf9c"
+        },
+        {
+          "Name": "label",
+          "Value": "html/hr_manager/departments.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-85SwoELjQrlDIy85Lp5IrvjWdPQGF8iPLh4UfX4r0xU="
+        }
+      ]
+    },
+    {
+      "Route": "html/hr_manager/employees.html",
+      "AssetFile": "C:\\Users\\Van Sinh\\source\\repos\\CeoMemo\\wwwroot\\html\\hr_manager\\employees.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13491"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"99ta0R/0JK+9dXsxxO4dEHPGL0geuawgsSI6vBBOTWI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 04:41:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-99ta0R/0JK+9dXsxxO4dEHPGL0geuawgsSI6vBBOTWI="
+        }
+      ]
+    },
+    {
+      "Route": "html/hr_manager/employees.pwj5k3r0m9.html",
+      "AssetFile": "C:\\Users\\Van Sinh\\source\\repos\\CeoMemo\\wwwroot\\html\\hr_manager\\employees.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "13491"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"99ta0R/0JK+9dXsxxO4dEHPGL0geuawgsSI6vBBOTWI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 04:41:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "pwj5k3r0m9"
+        },
+        {
+          "Name": "label",
+          "Value": "html/hr_manager/employees.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-99ta0R/0JK+9dXsxxO4dEHPGL0geuawgsSI6vBBOTWI="
+        }
+      ]
+    },
+    {
+      "Route": "html/hr_manager/index.html",
+      "AssetFile": "C:\\Users\\Van Sinh\\source\\repos\\CeoMemo\\wwwroot\\html\\hr_manager\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7529"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dLpyUnjCTyE88W76XYftD6VlhR4T6DVhls41vZDRkMw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 04:40:06 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-dLpyUnjCTyE88W76XYftD6VlhR4T6DVhls41vZDRkMw="
+        }
+      ]
+    },
+    {
+      "Route": "html/hr_manager/index.obtsnww5jw.html",
+      "AssetFile": "C:\\Users\\Van Sinh\\source\\repos\\CeoMemo\\wwwroot\\html\\hr_manager\\index.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "7529"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dLpyUnjCTyE88W76XYftD6VlhR4T6DVhls41vZDRkMw=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 04:40:06 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "obtsnww5jw"
+        },
+        {
+          "Name": "label",
+          "Value": "html/hr_manager/index.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-dLpyUnjCTyE88W76XYftD6VlhR4T6DVhls41vZDRkMw="
+        }
+      ]
+    },
+    {
+      "Route": "html/hr_manager/job_titles.c852mumn96.html",
+      "AssetFile": "C:\\Users\\Van Sinh\\source\\repos\\CeoMemo\\wwwroot\\html\\hr_manager\\job_titles.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14642"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"BEtXOGjBTsXIllfe9u8ChCSonzRCLuEY5AArK7YitKo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 04:42:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "c852mumn96"
+        },
+        {
+          "Name": "label",
+          "Value": "html/hr_manager/job_titles.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-BEtXOGjBTsXIllfe9u8ChCSonzRCLuEY5AArK7YitKo="
+        }
+      ]
+    },
+    {
+      "Route": "html/hr_manager/job_titles.html",
+      "AssetFile": "C:\\Users\\Van Sinh\\source\\repos\\CeoMemo\\wwwroot\\html\\hr_manager\\job_titles.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "14642"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"BEtXOGjBTsXIllfe9u8ChCSonzRCLuEY5AArK7YitKo=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 04:42:38 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-BEtXOGjBTsXIllfe9u8ChCSonzRCLuEY5AArK7YitKo="
+        }
+      ]
+    },
+    {
+      "Route": "html/hr_manager/notifications.html",
+      "AssetFile": "C:\\Users\\Van Sinh\\source\\repos\\CeoMemo\\wwwroot\\html\\hr_manager\\notifications.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6691"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"kUA3x+QMfKepHlgQsNlZZRF9QCuFLQrmwGFAkBWm2F0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 05:03:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-kUA3x+QMfKepHlgQsNlZZRF9QCuFLQrmwGFAkBWm2F0="
+        }
+      ]
+    },
+    {
+      "Route": "html/hr_manager/notifications.nqj2bpouu0.html",
+      "AssetFile": "C:\\Users\\Van Sinh\\source\\repos\\CeoMemo\\wwwroot\\html\\hr_manager\\notifications.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "6691"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"kUA3x+QMfKepHlgQsNlZZRF9QCuFLQrmwGFAkBWm2F0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 05:03:45 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "nqj2bpouu0"
+        },
+        {
+          "Name": "label",
+          "Value": "html/hr_manager/notifications.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-kUA3x+QMfKepHlgQsNlZZRF9QCuFLQrmwGFAkBWm2F0="
+        }
+      ]
+    },
+    {
+      "Route": "html/hr_manager/reports.adc15wddy6.html",
+      "AssetFile": "C:\\Users\\Van Sinh\\source\\repos\\CeoMemo\\wwwroot\\html\\hr_manager\\reports.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10231"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IlazgvQmEObtluitePX2eQROO+rVixskfjGkiVsv4ns=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 04:43:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "adc15wddy6"
+        },
+        {
+          "Name": "label",
+          "Value": "html/hr_manager/reports.html"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-IlazgvQmEObtluitePX2eQROO+rVixskfjGkiVsv4ns="
+        }
+      ]
+    },
+    {
+      "Route": "html/hr_manager/reports.html",
+      "AssetFile": "C:\\Users\\Van Sinh\\source\\repos\\CeoMemo\\wwwroot\\html\\hr_manager\\reports.html",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "10231"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/html"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"IlazgvQmEObtluitePX2eQROO+rVixskfjGkiVsv4ns=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 16 Apr 2025 04:43:32 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-IlazgvQmEObtluitePX2eQROO+rVixskfjGkiVsv4ns="
+        }
+      ]
+    }
+  ]
+}

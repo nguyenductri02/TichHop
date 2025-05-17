@@ -1,0 +1,6 @@
+wwwroot\html\hr_manager\departments.html
+wwwroot\html\hr_manager\employees.html
+wwwroot\html\hr_manager\index.html
+wwwroot\html\hr_manager\job_titles.html
+wwwroot\html\hr_manager\notifications.html
+wwwroot\html\hr_manager\reports.html

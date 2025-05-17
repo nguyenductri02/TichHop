@@ -1,0 +1,6 @@
+@CeoMemo_HostAddress = http://localhost:5115
+
+GET {{CeoMemo_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

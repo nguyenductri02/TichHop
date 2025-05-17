@@ -1,0 +1,49 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Van Sinh\\source\\repos\\CeoMemo\\wwwroot\\html\\hr_manager\\departments.html",
+      "PackagePath": "staticwebassets\\html\\hr_manager\\departments.html"
+    },
+    {
+      "Id": "C:\\Users\\Van Sinh\\source\\repos\\CeoMemo\\wwwroot\\html\\hr_manager\\employees.html",
+      "PackagePath": "staticwebassets\\html\\hr_manager\\employees.html"
+    },
+    {
+      "Id": "C:\\Users\\Van Sinh\\source\\repos\\CeoMemo\\wwwroot\\html\\hr_manager\\index.html",
+      "PackagePath": "staticwebassets\\html\\hr_manager\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\Van Sinh\\source\\repos\\CeoMemo\\wwwroot\\html\\hr_manager\\job_titles.html",
+      "PackagePath": "staticwebassets\\html\\hr_manager\\job_titles.html"
+    },
+    {
+      "Id": "C:\\Users\\Van Sinh\\source\\repos\\CeoMemo\\wwwroot\\html\\hr_manager\\notifications.html",
+      "PackagePath": "staticwebassets\\html\\hr_manager\\notifications.html"
+    },
+    {
+      "Id": "C:\\Users\\Van Sinh\\source\\repos\\CeoMemo\\wwwroot\\html\\hr_manager\\reports.html",
+      "PackagePath": "staticwebassets\\html\\hr_manager\\reports.html"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.CeoMemo.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.CeoMemo.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.CeoMemo.props",
+      "PackagePath": "build\\CeoMemo.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.CeoMemo.props",
+      "PackagePath": "buildMultiTargeting\\CeoMemo.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.CeoMemo.props",
+      "PackagePath": "buildTransitive\\CeoMemo.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
