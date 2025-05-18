@@ -69,13 +69,14 @@
         </div>
     </div>
 
+    <script src="js/api.js"></script>
     <script>
         // Focus username field on page load
         window.onload = function() {
             document.getElementById('username').focus();
         };
 
-        document.getElementById('loginForm').addEventListener('submit', function(e) {
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
             e.preventDefault();
             const username = document.getElementById('username').value;
             const password = document.getElementById('password').value;
@@ -86,11 +87,34 @@
                 return;
             }
 
-            // Simulate authentication
-            if (username === 'ADMIN' && password === 'password') {
-                window.location.href = 'index.html';
-            } else {
-                alert('Invalid credentials. Please try again.');
+            // Show loading state
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
+            submitBtn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Signing in...';
+            submitBtn.disabled = true;
+
+            try {
+                const response = await AuthService.login(username, password);
+                
+                if (response.error) {
+                    alert('Error: ' + response.error);
+                    return;
+                }
+                
+                if (response.token) {
+                    // Save token and redirect
+                    localStorage.setItem('token', response.token);
+                    window.location.href = 'index.html';
+                } else {
+                    alert('Invalid credentials. Please try again.');
+                }
+            } catch (error) {
+                console.error('Login error:', error);
+                alert('Login failed. Please try again.');
+            } finally {
+                // Reset button state
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
             }
         });
     </script>

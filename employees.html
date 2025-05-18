@@ -203,20 +203,186 @@
 </div>
 </div>
 
+<script src="js/api.js"></script>
 <script>
 function confirmDelete() {
-document.getElementById('deleteModal').classList.remove('hidden');
+    document.getElementById('deleteModal').classList.remove('hidden');
 }
 
 function closeDeleteModal() {
-document.getElementById('deleteModal').classList.add('hidden');
+    document.getElementById('deleteModal').classList.add('hidden');
 }
 
-function deleteEmployee() {
-// Add delete logic here
-alert('Employee deleted successfully');
-closeDeleteModal();
+let employees = [];
+let currentEmployeeId = null;
+
+// Load employees data
+async function loadEmployees() {
+    try {
+        const tbody = document.querySelector('tbody');
+        tbody.innerHTML = '<tr><td colspan="5" class="text-center py-4"><i class="fas fa-circle-notch fa-spin mr-2"></i> Loading employees...</td></tr>';
+        
+        const response = await HrService.getEmployees();
+        
+        if (response.error) {
+            tbody.innerHTML = `<tr><td colspan="5" class="text-center py-4 text-red-600"><i class="fas fa-exclamation-triangle mr-2"></i> ${response.error}</td></tr>`;
+            return;
+        }
+        
+        employees = response;
+        renderEmployees();
+    } catch (error) {
+        console.error('Error loading employees:', error);
+        document.querySelector('tbody').innerHTML = '<tr><td colspan="5" class="text-center py-4 text-red-600"><i class="fas fa-exclamation-triangle mr-2"></i> Failed to load employees</td></tr>';
+    }
 }
+
+// Render employees to table
+function renderEmployees() {
+    const tbody = document.querySelector('tbody');
+    
+    if (employees.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="5" class="text-center py-4">No employees found</td></tr>';
+        return;
+    }
+    
+    tbody.innerHTML = '';
+    
+    employees.forEach(employee => {
+        tbody.innerHTML += `
+            <tr>
+                <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 h-10 w-10">
+                            <img class="h-10 w-10 rounded-full" src="https://ui-avatars.com/api/?name=${encodeURIComponent(employee.fullName)}&background=random" alt="">
+                        </div>
+                        <div class="ml-4">
+                            <div class="text-sm font-medium text-gray-900">${employee.fullName}</div>
+                            <div class="text-sm text-gray-500">EMP${employee.employeeId.toString().padStart(3, '0')}</div>
+                        </div>
+                    </div>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-900">Department ${employee.departmentId}</div>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-900">Position ${employee.positionId}</div>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">${employee.status || 'Active'}</span>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                    <button class="text-blue-600 hover:text-blue-900 mr-3" onclick="editEmployee(${employee.employeeId})">
+                        <i class="fas fa-edit"></i> Edit
+                    </button>
+                    <button class="text-red-600 hover:text-red-900" onclick="prepareDelete(${employee.employeeId})">
+                        <i class="fas fa-trash"></i> Delete
+                    </button>
+                </td>
+            </tr>
+        `;
+    });
+}
+
+// Set up employee for deletion
+function prepareDelete(employeeId) {
+    currentEmployeeId = employeeId;
+    confirmDelete();
+}
+
+// Delete employee
+async function deleteEmployee() {
+    if (!currentEmployeeId) return;
+    
+    try {
+        const response = await HrService.deleteEmployee(currentEmployeeId);
+        
+        if (response.error) {
+            alert('Error: ' + response.error);
+            return;
+        }
+        
+        // Remove from local array and re-render
+        employees = employees.filter(e => e.employeeId !== currentEmployeeId);
+        renderEmployees();
+        closeDeleteModal();
+        
+        // Show success message
+        alert('Employee deleted successfully');
+    } catch (error) {
+        console.error('Error deleting employee:', error);
+        alert('Failed to delete employee');
+    }
+}
+
+// Search functionality
+document.querySelector('button.bg-blue-600').addEventListener('click', function() {
+    const idFilter = document.querySelector('input[placeholder="Search by ID..."]').value.toLowerCase();
+    const nameFilter = document.querySelector('input[placeholder="Search by name..."]').value.toLowerCase();
+    const departmentFilter = document.querySelector('select:nth-of-type(1)').value;
+    
+    // Filter employees based on search criteria
+    const filtered = employees.filter(employee => {
+        const matchesId = !idFilter || ('EMP' + employee.employeeId).toLowerCase().includes(idFilter);
+        const matchesName = !nameFilter || employee.fullName.toLowerCase().includes(nameFilter);
+        const matchesDepartment = !departmentFilter || employee.departmentId.toString() === departmentFilter;
+        
+        return matchesId && matchesName && matchesDepartment;
+    });
+    
+    // Render filtered results
+    renderFilteredEmployees(filtered);
+});
+
+function renderFilteredEmployees(filtered) {
+    const tbody = document.querySelector('tbody');
+    
+    if (filtered.length === 0) {
+        tbody.innerHTML = '<tr><td colspan="5" class="text-center py-4">No matching employees found</td></tr>';
+        return;
+    }
+    
+    tbody.innerHTML = '';
+    
+    filtered.forEach(employee => {
+        // Same rendering logic as in renderEmployees
+        tbody.innerHTML += `
+            <tr>
+                <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 h-10 w-10">
+                            <img class="h-10 w-10 rounded-full" src="https://ui-avatars.com/api/?name=${encodeURIComponent(employee.fullName)}&background=random" alt="">
+                        </div>
+                        <div class="ml-4">
+                            <div class="text-sm font-medium text-gray-900">${employee.fullName}</div>
+                            <div class="text-sm text-gray-500">EMP${employee.employeeId.toString().padStart(3, '0')}</div>
+                        </div>
+                    </div>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-900">Department ${employee.departmentId}</div>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap">
+                    <div class="text-sm text-gray-900">Position ${employee.positionId}</div>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap">
+                    <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">${employee.status || 'Active'}</span>
+                </td>
+                <td class="px-6 py-4 whitespace-nowrap text-sm font-medium">
+                    <button class="text-blue-600 hover:text-blue-900 mr-3" onclick="editEmployee(${employee.employeeId})">
+                        <i class="fas fa-edit"></i> Edit
+                    </button>
+                    <button class="text-red-600 hover:text-red-900" onclick="prepareDelete(${employee.employeeId})">
+                        <i class="fas fa-trash"></i> Delete
+                    </button>
+                </td>
+            </tr>
+        `;
+    });
+}
+
+// Load employees when page loads
+document.addEventListener('DOMContentLoaded', loadEmployees);
 </script>
 </body>
 </html>

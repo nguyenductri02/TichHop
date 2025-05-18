@@ -135,24 +135,6 @@
                         </tr>
                     </thead>
                     <tbody class="bg-white divide-y divide-gray-200">
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap">IT Department</td>
-                            <td class="px-6 py-4 whitespace-nowrap">156</td>
-                            <td class="px-6 py-4 whitespace-nowrap">$85,000</td>
-                            <td class="px-6 py-4 whitespace-nowrap">5.2%</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap">HR Department</td>
-                            <td class="px-6 py-4 whitespace-nowrap">45</td>
-                            <td class="px-6 py-4 whitespace-nowrap">$65,000</td>
-                            <td class="px-6 py-4 whitespace-nowrap">4.8%</td>
-                        </tr>
-                        <tr>
-                            <td class="px-6 py-4 whitespace-nowrap">Marketing</td>
-                            <td class="px-6 py-4 whitespace-nowrap">78</td>
-                            <td class="px-6 py-4 whitespace-nowrap">$72,000</td>
-                            <td class="px-6 py-4 whitespace-nowrap">6.1%</td>
-                        </tr>
                     </tbody>
                 </table>
             </div>
@@ -161,59 +143,224 @@
 </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="js/api.js"></script>
 <script>
-// Department Distribution Chart
-const departmentCtx = document.getElementById('departmentChart').getContext('2d');
-new Chart(departmentCtx, {
-    type: 'pie',
-    data: {
-        labels: ['IT', 'HR', 'Marketing', 'Finance', 'Operations'],
-        datasets: [{
-            data: [156, 45, 78, 92, 64],
-            backgroundColor: [
-                '#3B82F6',
-                '#10B981',
-                '#8B5CF6',
-                '#F59E0B',
-                '#EF4444'
-            ]
-        }]
-    },
-    options: {
-        responsive: true,
-        plugins: {
-            legend: {
-                position: 'bottom'
+let reportData = null;
+let departmentChart = null;
+let salaryChart = null;
+
+async function loadReportData() {
+    try {
+        const response = await IntegrationService.getReports();
+        
+        if (response.error) {
+            alert('Error loading reports: ' + response.error);
+            return;
+        }
+        
+        reportData = response;
+        processReportData();
+        renderReportTable();
+    } catch (error) {
+        console.error('Error loading reports:', error);
+        alert('Failed to load report data');
+    }
+}
+
+function processReportData() {
+    if (!reportData) return;
+    
+    // Group employees by department
+    const departmentCounts = {};
+    reportData.forEach(employee => {
+        const dept = `Department ${employee.departmentId}`;
+        departmentCounts[dept] = (departmentCounts[dept] || 0) + 1;
+    });
+    
+    // Group employees by salary range
+    const salaryRanges = {
+        '<$50k': 0,
+        '$50k-$70k': 0,
+        '$70k-$90k': 0,
+        '$90k-$110k': 0,
+        '>$110k': 0
+    };
+    
+    reportData.forEach(employee => {
+        const salary = employee.netSalary;
+        if (salary < 50000) salaryRanges['<$50k']++;
+        else if (salary < 70000) salaryRanges['$50k-$70k']++;
+        else if (salary < 90000) salaryRanges['$70k-$90k']++;
+        else if (salary < 110000) salaryRanges['$90k-$110k']++;
+        else salaryRanges['>$110k']++;
+    });
+    
+    // Update charts with actual data
+    updateDepartmentChart(departmentCounts);
+    updateSalaryChart(salaryRanges);
+}
+
+function updateDepartmentChart(departmentCounts) {
+    const ctx = document.getElementById('departmentChart').getContext('2d');
+    
+    // Destroy existing chart if it exists
+    if (departmentChart) {
+        departmentChart.destroy();
+    }
+    
+    // Create new chart
+    departmentChart = new Chart(ctx, {
+        type: 'pie',
+        data: {
+            labels: Object.keys(departmentCounts),
+            datasets: [{
+                data: Object.values(departmentCounts),
+                backgroundColor: [
+                    '#3B82F6',
+                    '#10B981',
+                    '#8B5CF6',
+                    '#F59E0B',
+                    '#EF4444'
+                ]
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'bottom'
+                }
             }
         }
+    });
+}
+
+function updateSalaryChart(salaryRanges) {
+    const ctx = document.getElementById('salaryChart').getContext('2d');
+    
+    // Destroy existing chart if it exists
+    if (salaryChart) {
+        salaryChart.destroy();
     }
+    
+    // Create new chart
+    salaryChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: Object.keys(salaryRanges),
+            datasets: [{
+                label: 'Number of Employees',
+                data: Object.values(salaryRanges),
+                backgroundColor: '#3B82F6'
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                }
+            }
+        }
+    });
+}
+
+function renderReportTable() {
+    if (!reportData) return;
+    
+    // Group by department
+    const departmentSummary = {};
+    reportData.forEach(employee => {
+        const deptId = employee.departmentId;
+        if (!departmentSummary[deptId]) {
+            departmentSummary[deptId] = {
+                count: 0,
+                totalSalary: 0,
+                turnover: Math.random() * 10 // Placeholder - would come from real data
+            };
+        }
+        
+        departmentSummary[deptId].count++;
+        departmentSummary[deptId].totalSalary += employee.netSalary;
+    });
+    
+    // Render table rows
+    const tbody = document.querySelector('table.min-w-full tbody');
+    tbody.innerHTML = '';
+    
+    Object.entries(departmentSummary).forEach(([deptId, data]) => {
+        const avgSalary = data.count > 0 ? data.totalSalary / data.count : 0;
+        
+        tbody.innerHTML += `
+            <tr>
+                <td class="px-6 py-4 whitespace-nowrap">Department ${deptId}</td>
+                <td class="px-6 py-4 whitespace-nowrap">${data.count}</td>
+                <td class="px-6 py-4 whitespace-nowrap">$${avgSalary.toLocaleString(undefined, {maximumFractionDigits: 0})}</td>
+                <td class="px-6 py-4 whitespace-nowrap">${data.turnover.toFixed(1)}%</td>
+            </tr>
+        `;
+    });
+}
+
+// Generate report on button click
+document.querySelector('button.bg-blue-600').addEventListener('click', function() {
+    loadReportData();
 });
 
-// Salary Distribution Chart
-const salaryCtx = document.getElementById('salaryChart').getContext('2d');
-new Chart(salaryCtx, {
-    type: 'bar',
-    data: {
-        labels: ['<$50k', '$50k-$70k', '$70k-$90k', '$90k-$110k', '>$110k'],
-        datasets: [{
-            label: 'Number of Employees',
-            data: [45, 125, 185, 95, 35],
-            backgroundColor: '#3B82F6'
-        }]
-    },
-    options: {
-        responsive: true,
-        scales: {
-            y: {
-                beginAtZero: true
-            }
+// Initialize charts with placeholder data on page load
+document.addEventListener('DOMContentLoaded', function() {
+    // Initial empty charts
+    const departmentCtx = document.getElementById('departmentChart').getContext('2d');
+    departmentChart = new Chart(departmentCtx, {
+        type: 'pie',
+        data: {
+            labels: ['No Data Available'],
+            datasets: [{
+                data: [1],
+                backgroundColor: ['#d1d5db']
+            }]
         },
-        plugins: {
-            legend: {
-                display: false
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'bottom'
+                }
             }
         }
-    }
+    });
+
+    const salaryCtx = document.getElementById('salaryChart').getContext('2d');
+    salaryChart = new Chart(salaryCtx, {
+        type: 'bar',
+        data: {
+            labels: ['No Data Available'],
+            datasets: [{
+                label: 'No Data',
+                data: [0],
+                backgroundColor: '#d1d5db'
+            }]
+        },
+        options: {
+            responsive: true,
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            },
+            plugins: {
+                legend: {
+                    display: false
+                }
+            }
+        }
+    });
 });
 </script>
 </body>
