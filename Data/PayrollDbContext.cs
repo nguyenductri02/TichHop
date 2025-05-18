@@ -28,12 +28,12 @@ public partial class PayrollDbContext : DbContext
     public virtual DbSet<Salary> Salaries { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseMySql("server=localhost;database=Payroll;user=root;password=123456", ServerVersion.Parse("9.2.0-mysql"));
+        => optionsBuilder.UseMySql("server=localhost;database=PayrollDb;username=root;password=", ServerVersion.Parse("5.7.0-mysql"));
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder
-            .UseCollation("utf8mb4_0900_ai_ci")
+            .UseCollation("utf8mb4_general_ci")
             .HasCharSet("utf8mb4");
 
         modelBuilder.Entity<Attendance>(entity =>
@@ -48,22 +48,16 @@ public partial class PayrollDbContext : DbContext
         modelBuilder.Entity<Department>(entity =>
         {
             entity.HasKey(e => e.DepartmentId).HasName("PRIMARY");
-
-            entity.Property(e => e.DepartmentId).ValueGeneratedNever();
         });
 
         modelBuilder.Entity<Employee>(entity =>
         {
             entity.HasKey(e => e.EmployeeId).HasName("PRIMARY");
-
-            entity.Property(e => e.EmployeeId).ValueGeneratedNever();
         });
 
         modelBuilder.Entity<Position>(entity =>
         {
             entity.HasKey(e => e.PositionId).HasName("PRIMARY");
-
-            entity.Property(e => e.PositionId).ValueGeneratedNever();
         });
 
         modelBuilder.Entity<Salary>(entity =>

@@ -21,6 +21,19 @@ builder.Services.AddCors(options =>
                    .AllowAnyHeader();
         });
 });
+
+// Add CORS policy
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend",
+        policy =>
+        {
+            policy.WithOrigins("http://127.0.0.1:5501")
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        });
+});
+
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -43,7 +56,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidIssuer = builder.Configuration["JWT:ValidIssuer"],
             ValidAudience = builder.Configuration["JWT:ValidAudience"],
             IssuerSigningKey = new SymmetricSecurityKey(
-                Encoding.UTF8.GetBytes(builder.Configuration["JWT:Secret"]))
+                Encoding.UTF8.GetBytes(builder.Configuration["JWT:Secret"] ?? "defaultSecretKey12345678901234567890"))
         };
     });
 
@@ -56,6 +69,8 @@ builder.Services.AddAuthorization(options =>
     options.AddPolicy("EmployeeOnly", policy => policy.RequireRole("Employee"));
 });
 builder.Services.AddScoped<JwtService>();
+builder.Services.AddScoped<CeoMemo.Services.DatabaseSeeder>();
+
 var app = builder.Build();
 //using (var scope = app.Services.CreateScope())
 //{
@@ -110,8 +125,27 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
+// Use CORS
+app.UseCors("AllowFrontend");
+
 app.UseAuthorization();
 
 app.MapControllers();
+
+// Initialize the database with seed data
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    try
+    {
+        var seeder = services.GetRequiredService<CeoMemo.Services.DatabaseSeeder>();
+        seeder.SeedData();
+    }
+    catch (Exception ex)
+    {
+        var logger = services.GetRequiredService<ILogger<Program>>();
+        logger.LogError(ex, "An error occurred seeding the DB.");
+    }
+}
 
 app.Run();
