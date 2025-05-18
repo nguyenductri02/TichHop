@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "cSGXyPV1ZwYInrwcnQO6MUQ3dw1wUUE3xlsLwV5q/Ug=",
+  "Hash": "04KL8wuLAXnXcrJx+SaPQQzTrlRBn3s5XK46WbjqE7s=",
   "Source": "CeoMemo",
   "BasePath": "_content/CeoMemo",
   "Mode": "Default",
@@ -10,17 +10,17 @@
     {
       "Name": "CeoMemo\\wwwroot",
       "Source": "CeoMemo",
-      "ContentRoot": "D:\\TichHop\\CeoMemo\\wwwroot\\",
+      "ContentRoot": "D:\\BE\\BE\\wwwroot\\",
       "BasePath": "_content/CeoMemo",
       "Pattern": "**"
     }
   ],
   "Assets": [
     {
-      "Identity": "D:\\TichHop\\CeoMemo\\wwwroot\\html\\hr_manager\\departments.html",
+      "Identity": "D:\\BE\\BE\\wwwroot\\html\\hr_manager\\departments.html",
       "SourceId": "CeoMemo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TichHop\\CeoMemo\\wwwroot\\",
+      "ContentRoot": "D:\\BE\\BE\\wwwroot\\",
       "BasePath": "_content/CeoMemo",
       "RelativePath": "html/hr_manager/departments#[.{fingerprint}]?.html",
       "AssetKind": "All",
@@ -38,10 +38,10 @@
       "OriginalItemSpec": "wwwroot\\html\\hr_manager\\departments.html"
     },
     {
-      "Identity": "D:\\TichHop\\CeoMemo\\wwwroot\\html\\hr_manager\\employees.html",
+      "Identity": "D:\\BE\\BE\\wwwroot\\html\\hr_manager\\employees.html",
       "SourceId": "CeoMemo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TichHop\\CeoMemo\\wwwroot\\",
+      "ContentRoot": "D:\\BE\\BE\\wwwroot\\",
       "BasePath": "_content/CeoMemo",
       "RelativePath": "html/hr_manager/employees#[.{fingerprint}]?.html",
       "AssetKind": "All",
@@ -59,10 +59,10 @@
       "OriginalItemSpec": "wwwroot\\html\\hr_manager\\employees.html"
     },
     {
-      "Identity": "D:\\TichHop\\CeoMemo\\wwwroot\\html\\hr_manager\\index.html",
+      "Identity": "D:\\BE\\BE\\wwwroot\\html\\hr_manager\\index.html",
       "SourceId": "CeoMemo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TichHop\\CeoMemo\\wwwroot\\",
+      "ContentRoot": "D:\\BE\\BE\\wwwroot\\",
       "BasePath": "_content/CeoMemo",
       "RelativePath": "html/hr_manager/index#[.{fingerprint}]?.html",
       "AssetKind": "All",
@@ -80,10 +80,10 @@
       "OriginalItemSpec": "wwwroot\\html\\hr_manager\\index.html"
     },
     {
-      "Identity": "D:\\TichHop\\CeoMemo\\wwwroot\\html\\hr_manager\\job_titles.html",
+      "Identity": "D:\\BE\\BE\\wwwroot\\html\\hr_manager\\job_titles.html",
       "SourceId": "CeoMemo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TichHop\\CeoMemo\\wwwroot\\",
+      "ContentRoot": "D:\\BE\\BE\\wwwroot\\",
       "BasePath": "_content/CeoMemo",
       "RelativePath": "html/hr_manager/job_titles#[.{fingerprint}]?.html",
       "AssetKind": "All",
@@ -101,10 +101,10 @@
       "OriginalItemSpec": "wwwroot\\html\\hr_manager\\job_titles.html"
     },
     {
-      "Identity": "D:\\TichHop\\CeoMemo\\wwwroot\\html\\hr_manager\\notifications.html",
+      "Identity": "D:\\BE\\BE\\wwwroot\\html\\hr_manager\\notifications.html",
       "SourceId": "CeoMemo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TichHop\\CeoMemo\\wwwroot\\",
+      "ContentRoot": "D:\\BE\\BE\\wwwroot\\",
       "BasePath": "_content/CeoMemo",
       "RelativePath": "html/hr_manager/notifications#[.{fingerprint}]?.html",
       "AssetKind": "All",
@@ -122,10 +122,10 @@
       "OriginalItemSpec": "wwwroot\\html\\hr_manager\\notifications.html"
     },
     {
-      "Identity": "D:\\TichHop\\CeoMemo\\wwwroot\\html\\hr_manager\\reports.html",
+      "Identity": "D:\\BE\\BE\\wwwroot\\html\\hr_manager\\reports.html",
       "SourceId": "CeoMemo",
       "SourceType": "Discovered",
-      "ContentRoot": "D:\\TichHop\\CeoMemo\\wwwroot\\",
+      "ContentRoot": "D:\\BE\\BE\\wwwroot\\",
       "BasePath": "_content/CeoMemo",
       "RelativePath": "html/hr_manager/reports#[.{fingerprint}]?.html",
       "AssetKind": "All",
@@ -146,7 +146,7 @@
   "Endpoints": [
     {
       "Route": "html/hr_manager/departments.html",
-      "AssetFile": "D:\\TichHop\\CeoMemo\\wwwroot\\html\\hr_manager\\departments.html",
+      "AssetFile": "D:\\BE\\BE\\wwwroot\\html\\hr_manager\\departments.html",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -167,7 +167,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 17 May 2025 06:38:57 GMT"
+          "Value": "Sun, 18 May 2025 05:10:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -183,7 +183,7 @@
     },
     {
       "Route": "html/hr_manager/departments.ry1s89xf9c.html",
-      "AssetFile": "D:\\TichHop\\CeoMemo\\wwwroot\\html\\hr_manager\\departments.html",
+      "AssetFile": "D:\\BE\\BE\\wwwroot\\html\\hr_manager\\departments.html",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -204,7 +204,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 17 May 2025 06:38:57 GMT"
+          "Value": "Sun, 18 May 2025 05:10:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -228,7 +228,7 @@
     },
     {
       "Route": "html/hr_manager/employees.html",
-      "AssetFile": "D:\\TichHop\\CeoMemo\\wwwroot\\html\\hr_manager\\employees.html",
+      "AssetFile": "D:\\BE\\BE\\wwwroot\\html\\hr_manager\\employees.html",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -249,7 +249,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 17 May 2025 06:38:57 GMT"
+          "Value": "Sun, 18 May 2025 05:10:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -265,7 +265,7 @@
     },
     {
       "Route": "html/hr_manager/employees.pwj5k3r0m9.html",
-      "AssetFile": "D:\\TichHop\\CeoMemo\\wwwroot\\html\\hr_manager\\employees.html",
+      "AssetFile": "D:\\BE\\BE\\wwwroot\\html\\hr_manager\\employees.html",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -286,7 +286,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 17 May 2025 06:38:57 GMT"
+          "Value": "Sun, 18 May 2025 05:10:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -310,7 +310,7 @@
     },
     {
       "Route": "html/hr_manager/index.html",
-      "AssetFile": "D:\\TichHop\\CeoMemo\\wwwroot\\html\\hr_manager\\index.html",
+      "AssetFile": "D:\\BE\\BE\\wwwroot\\html\\hr_manager\\index.html",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -331,7 +331,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 17 May 2025 06:38:57 GMT"
+          "Value": "Sun, 18 May 2025 05:10:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -347,7 +347,7 @@
     },
     {
       "Route": "html/hr_manager/index.obtsnww5jw.html",
-      "AssetFile": "D:\\TichHop\\CeoMemo\\wwwroot\\html\\hr_manager\\index.html",
+      "AssetFile": "D:\\BE\\BE\\wwwroot\\html\\hr_manager\\index.html",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -368,7 +368,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 17 May 2025 06:38:57 GMT"
+          "Value": "Sun, 18 May 2025 05:10:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -392,7 +392,7 @@
     },
     {
       "Route": "html/hr_manager/job_titles.c852mumn96.html",
-      "AssetFile": "D:\\TichHop\\CeoMemo\\wwwroot\\html\\hr_manager\\job_titles.html",
+      "AssetFile": "D:\\BE\\BE\\wwwroot\\html\\hr_manager\\job_titles.html",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -413,7 +413,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 17 May 2025 06:38:57 GMT"
+          "Value": "Sun, 18 May 2025 05:10:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -437,7 +437,7 @@
     },
     {
       "Route": "html/hr_manager/job_titles.html",
-      "AssetFile": "D:\\TichHop\\CeoMemo\\wwwroot\\html\\hr_manager\\job_titles.html",
+      "AssetFile": "D:\\BE\\BE\\wwwroot\\html\\hr_manager\\job_titles.html",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -458,7 +458,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 17 May 2025 06:38:57 GMT"
+          "Value": "Sun, 18 May 2025 05:10:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -474,7 +474,7 @@
     },
     {
       "Route": "html/hr_manager/notifications.html",
-      "AssetFile": "D:\\TichHop\\CeoMemo\\wwwroot\\html\\hr_manager\\notifications.html",
+      "AssetFile": "D:\\BE\\BE\\wwwroot\\html\\hr_manager\\notifications.html",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -495,7 +495,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 17 May 2025 06:38:57 GMT"
+          "Value": "Sun, 18 May 2025 05:10:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -511,7 +511,7 @@
     },
     {
       "Route": "html/hr_manager/notifications.nqj2bpouu0.html",
-      "AssetFile": "D:\\TichHop\\CeoMemo\\wwwroot\\html\\hr_manager\\notifications.html",
+      "AssetFile": "D:\\BE\\BE\\wwwroot\\html\\hr_manager\\notifications.html",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -532,7 +532,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 17 May 2025 06:38:57 GMT"
+          "Value": "Sun, 18 May 2025 05:10:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -556,7 +556,7 @@
     },
     {
       "Route": "html/hr_manager/reports.adc15wddy6.html",
-      "AssetFile": "D:\\TichHop\\CeoMemo\\wwwroot\\html\\hr_manager\\reports.html",
+      "AssetFile": "D:\\BE\\BE\\wwwroot\\html\\hr_manager\\reports.html",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -577,7 +577,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 17 May 2025 06:38:57 GMT"
+          "Value": "Sun, 18 May 2025 05:10:09 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -601,7 +601,7 @@
     },
     {
       "Route": "html/hr_manager/reports.html",
-      "AssetFile": "D:\\TichHop\\CeoMemo\\wwwroot\\html\\hr_manager\\reports.html",
+      "AssetFile": "D:\\BE\\BE\\wwwroot\\html\\hr_manager\\reports.html",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -622,7 +622,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 17 May 2025 06:38:57 GMT"
+          "Value": "Sun, 18 May 2025 05:10:09 GMT"
         },
         {
           "Name": "Cache-Control",

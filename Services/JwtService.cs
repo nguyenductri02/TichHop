@@ -1,9 +1,10 @@
-﻿using CeoMemo.Data;
-using CeoMemo.Models.Human;
-using Microsoft.IdentityModel.Tokens;
+﻿using System;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using CeoMemo.Data;
+using CeoMemo.Models.Human;
+using Microsoft.IdentityModel.Tokens;
 
 namespace CeoMemo.Services
 {
@@ -20,35 +21,38 @@ namespace CeoMemo.Services
 
         public string GenerateToken(string username, string role)
         {
+            var jwtKey = _configuration["Jwt:Key"] ?? throw new InvalidOperationException("JWT key is not configured");
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtKey));
+            var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
+            var expirationStr = _configuration["Jwt:ExpirationMinutes"] ?? "60";
+            var expirationMinutes = int.Parse(expirationStr);
+
             var claims = new[]
             {
-                new Claim(ClaimTypes.Name, username),
+                new Claim(JwtRegisteredClaimNames.Sub, username),
+                new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                 new Claim(ClaimTypes.Role, role)
             };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Secret"] ?? "defaultSecretKey12345678901234567890"));
-            var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
-            var expires = DateTime.Now.AddMinutes(30);
-
             var token = new JwtSecurityToken(
-                issuer: _configuration["JWT:ValidIssuer"],
-                audience: _configuration["JWT:ValidAudience"],
+                issuer: _configuration["Jwt:Issuer"],
+                audience: _configuration["Jwt:Audience"],
                 claims: claims,
-                expires: expires,
-                signingCredentials: creds);
+                expires: DateTime.UtcNow.AddMinutes(expirationMinutes),
+                signingCredentials: credentials
+            );
 
             var tokenString = new JwtSecurityTokenHandler().WriteToken(token);
 
-            // Store the token in the database
-            var tokenEntity = new Token
+            // Store the token
+            _humanDbContext.Tokens.Add(new Token
             {
                 JwtToken = tokenString,
                 IsBlacklisted = false,
-                IssuedAt = DateTime.Now,
-                ExpiresAt = expires,
-                CreatedAt = DateTime.Now
-            };
-            _humanDbContext.Tokens.Add(tokenEntity);
+                IssuedAt = DateTime.UtcNow,
+                ExpiresAt = DateTime.UtcNow.AddMinutes(expirationMinutes),
+                CreatedAt = DateTime.UtcNow
+            });
             _humanDbContext.SaveChanges();
 
             return tokenString;
@@ -56,12 +60,12 @@ namespace CeoMemo.Services
 
         public void BlacklistToken(string token)
         {
-            var tokenEntity = _humanDbContext.Tokens
+            var existingToken = _humanDbContext.Tokens
                 .FirstOrDefault(t => t.JwtToken == token && !t.IsBlacklisted);
 
-            if (tokenEntity != null)
+            if (existingToken != null)
             {
-                tokenEntity.IsBlacklisted = true;
+                existingToken.IsBlacklisted = true;
                 _humanDbContext.SaveChanges();
             }
         }

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\TichHop\\CeoMemo\\CeoMemo.csproj": {}
+    "D:\\BE\\BE\\CeoMemo.csproj": {}
   },
   "projects": {
-    "D:\\TichHop\\CeoMemo\\CeoMemo.csproj": {
+    "D:\\BE\\BE\\CeoMemo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\TichHop\\CeoMemo\\CeoMemo.csproj",
+        "projectUniqueName": "D:\\BE\\BE\\CeoMemo.csproj",
         "projectName": "CeoMemo",
-        "projectPath": "D:\\TichHop\\CeoMemo\\CeoMemo.csproj",
+        "projectPath": "D:\\BE\\BE\\CeoMemo.csproj",
         "packagesPath": "C:\\Users\\vietp\\.nuget\\packages\\",
-        "outputPath": "D:\\TichHop\\CeoMemo\\obj\\",
+        "outputPath": "D:\\BE\\BE\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\vietp\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -63,7 +63,7 @@
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[8.0.2, )"
+              "version": "[8.0.1, )"
             },
             "MySql.EntityFrameworkCore": {
               "target": "Package",

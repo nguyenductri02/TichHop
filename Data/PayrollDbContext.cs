@@ -1,8 +1,7 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using CeoMemo.Models.Payroll;
 using Microsoft.EntityFrameworkCore;
-using Pomelo.EntityFrameworkCore.MySql.Scaffolding.Internal;
 
 namespace CeoMemo.Data;
 
@@ -28,44 +27,46 @@ public partial class PayrollDbContext : DbContext
     public virtual DbSet<Salary> Salaries { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseMySql("server=localhost;database=PayrollDb;username=root;password=", ServerVersion.Parse("5.7.0-mysql"));
+        => optionsBuilder.UseSqlServer("Server=localhost;Database=Payroll;Trusted_Connection=True;Encrypt=False;TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder
-            .UseCollation("utf8mb4_general_ci")
-            .HasCharSet("utf8mb4");
-
         modelBuilder.Entity<Attendance>(entity =>
         {
-            entity.HasKey(e => e.AttendanceId).HasName("PRIMARY");
+            entity.HasKey(e => e.AttendanceId).HasName("PK_Attendance");
 
             entity.Property(e => e.AbsentDays).HasDefaultValueSql("'0'");
-            entity.Property(e => e.CreatedAt).HasDefaultValueSql("CURRENT_TIMESTAMP");
+            entity.Property(e => e.CreatedAt).HasDefaultValueSql("(getdate())");
             entity.Property(e => e.LeaveDays).HasDefaultValueSql("'0'");
         });
 
         modelBuilder.Entity<Department>(entity =>
         {
-            entity.HasKey(e => e.DepartmentId).HasName("PRIMARY");
+            entity.HasKey(e => e.DepartmentId).HasName("PK_Payroll_Department");
+
+            entity.Property(e => e.DepartmentId).ValueGeneratedNever();
         });
 
         modelBuilder.Entity<Employee>(entity =>
         {
-            entity.HasKey(e => e.EmployeeId).HasName("PRIMARY");
+            entity.HasKey(e => e.EmployeeId).HasName("PK_Payroll_Employee");
+
+            entity.Property(e => e.EmployeeId).ValueGeneratedNever();
         });
 
         modelBuilder.Entity<Position>(entity =>
         {
-            entity.HasKey(e => e.PositionId).HasName("PRIMARY");
+            entity.HasKey(e => e.PositionId).HasName("PK_Payroll_Position");
+
+            entity.Property(e => e.PositionId).ValueGeneratedNever();
         });
 
         modelBuilder.Entity<Salary>(entity =>
         {
-            entity.HasKey(e => e.SalaryId).HasName("PRIMARY");
+            entity.HasKey(e => e.SalaryId).HasName("PK_Salary");
 
             entity.Property(e => e.Bonus).HasDefaultValueSql("'0.00'");
-            entity.Property(e => e.CreatedAt).HasDefaultValueSql("CURRENT_TIMESTAMP");
+            entity.Property(e => e.CreatedAt).HasDefaultValueSql("(getdate())");
             entity.Property(e => e.Deductions).HasDefaultValueSql("'0.00'");
         });
 

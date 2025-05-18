@@ -13,7 +13,13 @@ public partial class Department
     public int DepartmentId { get; set; }
 
     [StringLength(100)]
-    public string DepartmentName { get; set; } = null!;
+    public string Name { get; set; } = null!; // Changed from DepartmentName to Name
+
+    [StringLength(100)]
+    public string? Manager { get; set; } // Added Manager property
+    
+    [StringLength(255)]
+    public string? Description { get; set; } // Added Description property
 
     [Column(TypeName = "datetime")]
     public DateTime? CreatedAt { get; set; }

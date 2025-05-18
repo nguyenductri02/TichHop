@@ -27,7 +27,7 @@ public partial class HumanDbContext : DbContext
     public DbSet<User> Users { get; set; }
     public DbSet<Token> Tokens { get; set; }
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        => optionsBuilder.UseSqlServer("Server=.;Database=HumanDB;Trusted_Connection=True;TrustServerCertificate=True;");
+        => optionsBuilder.UseSqlServer("Server=localhost;Database=Human;Trusted_Connection=True;Encrypt=False;TrustServerCertificate=True;");
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {

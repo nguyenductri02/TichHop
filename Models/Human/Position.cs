@@ -13,7 +13,10 @@ public partial class Position
     public int PositionId { get; set; }
 
     [StringLength(100)]
-    public string PositionName { get; set; } = null!;
+    public string Name { get; set; } = null!; // Changed from PositionName to Name
+
+    [Column("DepartmentID")]
+    public int DepartmentId { get; set; } // Added DepartmentId property
 
     [Column(TypeName = "datetime")]
     public DateTime? CreatedAt { get; set; }
