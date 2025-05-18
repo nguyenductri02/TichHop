@@ -164,4 +164,71 @@
           </div>
         </div>
       </main>
-      
+    </div>
+  </div>
+  <script>
+    const API_BASE_URL = 'http://localhost:5115/api'; // Adjust if your backend runs elsewhere
+
+    function getAuthToken() {
+        return localStorage.getItem('authToken');
+    }
+
+    async function fetchDashboardStats() {
+        const token = getAuthToken();
+        if (!token) {
+            window.location.href = 'login.html';
+            return;
+        }
+
+        try {
+            // Fetch employees to get counts
+            const response = await fetch(`${API_BASE_URL}/Integration/employees?page=1&pageSize=1`, { // Fetch minimal data
+                headers: {
+                    'Authorization': `Bearer ${token}`
+                }
+            });
+
+            if (response.status === 401) {
+                window.location.href = 'login.html';
+                return;
+            }
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+            
+            const data = await response.json();
+            
+            // Update Employee Count
+            const employeeStat = document.querySelector('.fa-users').closest('.flex.items-center').querySelector('h3');
+            if (employeeStat) employeeStat.textContent = data.total || 'N/A';
+
+            // For departments and job titles, the API returns employee details, not aggregate counts directly.
+            // A more robust solution would be dedicated API endpoints for these counts.
+            // For now, we can fetch all employees and count unique departments/positions if needed,
+            // or use placeholders. Let's use placeholders for simplicity here.
+            const departmentStat = document.querySelector('.fa-building').closest('.flex.items-center').querySelector('h3');
+            if (departmentStat) departmentStat.textContent = '12'; // Placeholder
+
+            const jobTitleStat = document.querySelector('.fa-briefcase').closest('.flex.items-center').querySelector('h3');
+            if (jobTitleStat) jobTitleStat.textContent = '45'; // Placeholder
+
+            // Other stats are likely placeholders or would require specific APIs
+            // For example, Payroll, Reports, Alerts, Accounts, System Settings.
+
+        } catch (error) {
+            console.error('Failed to fetch dashboard stats:', error);
+            // Optionally update UI to show error
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        fetchDashboardStats();
+
+        // Check if user is logged in (simple check)
+        if (!getAuthToken()) {
+            window.location.href = 'login.html';
+        }
+    });
+  </script>
+</body>
+</html>

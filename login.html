@@ -69,8 +69,9 @@
         </div>
     </div>
 
-    <script src="js/api.js"></script>
     <script>
+        const API_BASE_URL = 'http://localhost:5115/api'; // Adjust if your backend runs elsewhere
+
         // Focus username field on page load
         window.onload = function() {
             document.getElementById('username').focus();
@@ -78,43 +79,45 @@
 
         document.getElementById('loginForm').addEventListener('submit', async function(e) {
             e.preventDefault();
-            const username = document.getElementById('username').value;
+            const emailOrUsername = document.getElementById('username').value; // Field is used for email or username
             const password = document.getElementById('password').value;
+            const loginButton = this.querySelector('button[type="submit"]');
+            const originalButtonText = loginButton.innerHTML;
             
-            // Basic validation
-            if (!username || !password) {
+            loginButton.disabled = true;
+            loginButton.innerHTML = `<i class="fas fa-spinner fa-spin mr-2"></i> Signing in...`;
+
+            if (!emailOrUsername || !password) {
                 alert('Please fill in all fields');
+                loginButton.disabled = false;
+                loginButton.innerHTML = originalButtonText;
                 return;
             }
 
-            // Show loading state
-            const submitBtn = this.querySelector('button[type="submit"]');
-            const originalBtnText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-circle-notch fa-spin"></i> Signing in...';
-            submitBtn.disabled = true;
-
             try {
-                const response = await AuthService.login(username, password);
-                
-                if (response.error) {
-                    alert('Error: ' + response.error);
-                    return;
-                }
-                
-                if (response.token) {
-                    // Save token and redirect
-                    localStorage.setItem('token', response.token);
+                const response = await fetch(`${API_BASE_URL}/Auth/login`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email: emailOrUsername, password: password }),
+                });
+
+                if (response.ok) {
+                    const data = await response.json();
+                    localStorage.setItem('authToken', data.token);
+                    // console.log('Login successful, token:', data.token);
                     window.location.href = 'index.html';
                 } else {
-                    alert('Invalid credentials. Please try again.');
+                    const errorData = await response.json();
+                    alert(`Login failed: ${errorData.message || response.statusText}`);
                 }
             } catch (error) {
                 console.error('Login error:', error);
-                alert('Login failed. Please try again.');
+                alert('An error occurred during login. Please try again.');
             } finally {
-                // Reset button state
-                submitBtn.innerHTML = originalBtnText;
-                submitBtn.disabled = false;
+                loginButton.disabled = false;
+                loginButton.innerHTML = originalButtonText;
             }
         });
     </script>

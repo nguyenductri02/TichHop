@@ -115,5 +115,39 @@
       </div>
     </main>
   </div>
+  <script>
+    const API_BASE_URL = 'http://localhost:5115/api'; // Adjust
+
+    function getAuthToken() {
+        return localStorage.getItem('authToken');
+    }
+
+    // Placeholder for saving settings
+    async function saveGeneralSettings(event) {
+        event.preventDefault();
+        // const token = getAuthToken();
+        // if (!token) { window.location.href = 'login.html'; return; }
+        console.warn("saveGeneralSettings: API endpoint not defined. Simulating save.");
+        alert("General settings saved (simulated).");
+    }
+
+    async function saveSecuritySettings(event) {
+        event.preventDefault();
+        // const token = getAuthToken();
+        // if (!token) { window.location.href = 'login.html'; return; }
+        console.warn("saveSecuritySettings: API endpoint not defined. Simulating save.");
+        alert("Security settings saved (simulated).");
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        if (!getAuthToken()) {
+            // window.location.href = 'login.html'; // Enable if strict auth needed
+        }
+
+        const forms = document.querySelectorAll('form');
+        if (forms.length > 0) forms[0].addEventListener('submit', saveGeneralSettings);
+        if (forms.length > 1) forms[1].addEventListener('submit', saveSecuritySettings);
+    });
+  </script>
 </body>
 </html>

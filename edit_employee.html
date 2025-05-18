@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Employee</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body { font-family: 'Poppins', sans-serif; }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <div class="min-h-screen flex">
+        <!-- Sidebar (consistent with other pages) -->
+        <div class="bg-blue-800 text-white w-64 py-4 flex flex-col">
+            <div class="px-4 py-4 border-b border-blue-700"><h1 class="text-2xl font-bold">Admin</h1></div>
+            <nav class="flex-1 px-2 py-4 space-y-2">
+                <a href="index.html" class="flex items-center px-4 py-3 hover:bg-blue-700 rounded-lg"><i class="fas fa-tachometer-alt mr-3"></i> Dashboard</a>
+                <a href="users.html" class="flex items-center px-4 py-3 hover:bg-blue-700 text-gray-300 rounded-lg"><i class="fas fa-user-shield mr-3"></i> Accounts & Roles</a>
+                <a href="employees.html" class="flex items-center px-4 py-3 bg-blue-700 rounded-lg"><i class="fas fa-users mr-3"></i> Employees</a>
+                <a href="payroll.html" class="flex items-center px-4 py-3 hover:bg-blue-700 text-gray-300 rounded-lg"><i class="fas fa-money-bill-wave mr-3"></i> Payroll</a>
+                <a href="departments.html" class="flex items-center px-4 py-3 hover:bg-blue-700 text-gray-300 rounded-lg"><i class="fas fa-building mr-3"></i> Departments</a>
+                <a href="job_titles.html" class="flex items-center px-4 py-3 hover:bg-blue-700 text-gray-300 rounded-lg"><i class="fas fa-briefcase mr-3"></i> Job Titles</a>
+                <a href="reports.html" class="flex items-center px-4 py-3 hover:bg-blue-700 text-gray-300 rounded-lg"><i class="fas fa-chart-bar mr-3"></i> Reports</a>
+                <a href="notifications.html" class="flex items-center px-4 py-3 hover:bg-blue-700 text-gray-300 rounded-lg"><i class="fas fa-bell mr-3"></i> Alerts</a>
+                <a href="settings.html" class="flex items-center px-4 py-3 hover:bg-blue-700 text-gray-300 rounded-lg"><i class="fas fa-cogs mr-3"></i> System Settings</a>
+            </nav>
+            <div class="px-4 py-4 border-t border-blue-700"><a href="login.html" class="flex items-center text-gray-300 hover:text-white"><i class="fas fa-sign-out-alt mr-3"></i> Logout</a></div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="flex-1 flex flex-col overflow-hidden">
+            <header class="bg-white shadow-sm">
+                <div class="flex items-center justify-between px-6 py-4">
+                    <h2 class="text-xl font-semibold text-gray-800">Edit Employee</h2>
+                     <div class="flex items-center space-x-4">
+                        <button class="relative"><i class="fas fa-bell text-gray-600 text-xl"></i><span class="absolute top-0 right-0 -mt-1 -mr-1 px-2 py-0.5 bg-red-500 text-white text-xs rounded-full">3</span></button>
+                        <div class="flex items-center"><img class="h-8 w-8 rounded-full" src="https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg" alt="Admin" /><span class="ml-2 text-gray-700">Admin</span></div>
+                    </div>
+                </div>
+            </header>
+
+            <main class="flex-1 overflow-x-hidden overflow-y-auto bg-gray-100 p-6">
+                <div class="bg-white rounded-lg shadow p-6">
+                    <form id="editEmployeeForm" class="space-y-6">
+                        <input type="hidden" name="employeeId" id="employeeId">
+                        <div>
+                            <label for="fullName" class="block text-sm font-medium text-gray-700">Full Name</label>
+                            <input type="text" name="fullName" id="fullName" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                        </div>
+                         <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="dateOfBirth" class="block text-sm font-medium text-gray-700">Date of Birth</label>
+                                <input type="date" name="dateOfBirth" id="dateOfBirth" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            <div>
+                                <label for="gender" class="block text-sm font-medium text-gray-700">Gender</label>
+                                <select name="gender" id="gender" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                                    <option value="">Select Gender</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="phoneNumber" class="block text-sm font-medium text-gray-700">Phone Number</label>
+                                <input type="tel" name="phoneNumber" id="phoneNumber" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                                <input type="email" name="email" id="email" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="hireDate" class="block text-sm font-medium text-gray-700">Hire Date</label>
+                                <input type="date" name="hireDate" id="hireDate" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                             <div>
+                                <label for="status" class="block text-sm font-medium text-gray-700">Status</label>
+                                <select name="status" id="status" required class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                                    <option value="Active">Active</option>
+                                    <option value="Inactive">Inactive</option>
+                                    <option value="On Leave">On Leave</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div>
+                                <label for="departmentId" class="block text-sm font-medium text-gray-700">Department</label>
+                                <select name="departmentId" id="departmentId" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                                    <option value="">Select Department</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="positionId" class="block text-sm font-medium text-gray-700">Position/Job Title</label>
+                                <select name="positionId" id="positionId" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                                    <option value="">Select Position</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="flex justify-end space-x-3">
+                            <button type="button" onclick="window.location.href='employees.html'" class="px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50">Cancel</button>
+                            <button type="submit" class="px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700">Save Changes</button>
+                        </div>
+                    </form>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script>
+        const API_BASE_URL = 'http://localhost:5115/api';
+        let currentEmployeeId = null;
+
+        function getAuthToken() {
+            return localStorage.getItem('authToken');
+        }
+
+        async function fetchDepartments(selectedDeptId) {
+            const token = getAuthToken();
+            if (!token) { window.location.href = 'login.html'; return; }
+            try {
+                const response = await fetch(`${API_BASE_URL}/Integration/departments`, {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                if (!response.ok) throw new Error('Failed to fetch departments');
+                const departments = await response.json();
+                const select = document.getElementById('departmentId');
+                select.innerHTML = '<option value="">Select Department</option>'; // Clear existing
+                departments.forEach(dept => {
+                    const option = document.createElement('option');
+                    option.value = dept.departmentId;
+                    option.textContent = dept.name;
+                    if (selectedDeptId && dept.departmentId === selectedDeptId) {
+                        option.selected = true;
+                    }
+                    select.appendChild(option);
+                });
+            } catch (error) {
+                console.error('Error fetching departments:', error);
+            }
+        }
+
+        async function fetchPositions(selectedPosId) {
+            const token = getAuthToken();
+            if (!token) { window.location.href = 'login.html'; return; }
+            try {
+                const response = await fetch(`${API_BASE_URL}/Integration/positions`, {
+                    headers: { 'Authorization': `Bearer ${token}` }
+                });
+                if (!response.ok) throw new Error('Failed to fetch positions');
+                const positions = await response.json();
+                const select = document.getElementById('positionId');
+                select.innerHTML = '<option value="">Select Position</option>'; // Clear existing
+                positions.forEach(pos => {
+                    const option = document.createElement('option');
+                    option.value = pos.positionId;
+                    option.textContent = pos.name;
+                     if (selectedPosId && pos.positionId === selectedPosId) {
+                        option.selected = true;
+                    }
+                    select.appendChild(option);
+                });
+            } catch (error) {
+                console.error('Error fetching positions:', error);
+            }
+        }
+        
+        async function loadEmployeeData(employeeId) {
+            const token = getAuthToken();
+            if (!token) { window.location.href = 'login.html'; return; }
+            try {
+                const response = await fetch(`${API_BASE_URL}/Integration/employee/${employeeId}`, {
+                     headers: { 'Authorization': `Bearer ${token}` }
+                });
+                if (!response.ok) {
+                    throw new Error(`Failed to fetch employee data: ${response.statusText}`);
+                }
+                const employee = await response.json();
+                
+                document.getElementById('employeeId').value = employee.employeeId;
+                document.getElementById('fullName').value = employee.fullName;
+                document.getElementById('dateOfBirth').value = employee.dateOfBirth; // Assumes YYYY-MM-DD
+                document.getElementById('gender').value = employee.gender;
+                document.getElementById('phoneNumber').value = employee.phoneNumber;
+                document.getElementById('email').value = employee.email;
+                document.getElementById('hireDate').value = employee.hireDate; // Assumes YYYY-MM-DD
+                document.getElementById('status').value = employee.status;
+                
+                // Fetch and then set selected
+                await fetchDepartments(employee.departmentId);
+                await fetchPositions(employee.positionId);
+                // Fallback if async setting is tricky, set directly after population
+                if (employee.departmentId) document.getElementById('departmentId').value = employee.departmentId;
+                if (employee.positionId) document.getElementById('positionId').value = employee.positionId;
+
+
+            } catch (error) {
+                console.error('Error loading employee data:', error);
+                alert('Failed to load employee data. ' + error.message);
+                window.location.href = 'employees.html';
+            }
+        }
+
+        document.getElementById('editEmployeeForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const token = getAuthToken();
+            if (!token) { window.location.href = 'login.html'; return; }
+
+            const formData = new FormData(this);
+            const employeeData = {
+                employeeId: parseInt(formData.get('employeeId')),
+                fullName: formData.get('fullName'),
+                dateOfBirth: formData.get('dateOfBirth'),
+                gender: formData.get('gender'),
+                phoneNumber: formData.get('phoneNumber'),
+                email: formData.get('email'),
+                hireDate: formData.get('hireDate'),
+                departmentId: formData.get('departmentId') ? parseInt(formData.get('departmentId')) : null,
+                positionId: formData.get('positionId') ? parseInt(formData.get('positionId')) : null,
+                status: formData.get('status')
+            };
+
+            try {
+                const response = await fetch(`${API_BASE_URL}/Integration/update-employee/${currentEmployeeId}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    },
+                    body: JSON.stringify(employeeData)
+                });
+
+                if (response.ok) {
+                    alert('Employee updated successfully!');
+                    window.location.href = 'employees.html';
+                } else {
+                    const errorData = await response.json();
+                    alert(`Failed to update employee: ${errorData.message || JSON.stringify(errorData.errors) || response.statusText}`);
+                }
+            } catch (error) {
+                console.error('Error updating employee:', error);
+                alert('An error occurred. Please try again.');
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            if (!getAuthToken()) {
+                window.location.href = 'login.html';
+                return;
+            }
+            const urlParams = new URLSearchParams(window.location.search);
+            currentEmployeeId = urlParams.get('id');
+            if (currentEmployeeId) {
+                loadEmployeeData(currentEmployeeId);
+            } else {
+                alert('No employee ID provided.');
+                window.location.href = 'employees.html';
+            }
+        });
+    </script>
+</body>
+</html>

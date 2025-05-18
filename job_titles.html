@@ -97,104 +97,8 @@
                 </button>
             </div>
             <div class="p-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                    <!-- Software Developer -->
-                    <div class="bg-white border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-                        <div class="p-6">
-                            <div class="flex items-center justify-between mb-4">
-                                <div class="flex items-center">
-                                    <div class="p-3 rounded-full bg-blue-100 text-blue-600">
-                                        <i class="fas fa-laptop-code text-xl"></i>
-                                    </div>
-                                    <h4 class="text-lg font-semibold text-gray-800 ml-3">Software Developer</h4>
-                                </div>
-                                <div class="flex space-x-2">
-                                    <button class="text-blue-600 hover:text-blue-800">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-                                    <button class="text-red-600 hover:text-red-800">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="space-y-2">
-                                <div class="flex justify-between text-sm">
-                                    <span class="text-gray-500">Employees:</span>
-                                    <span class="font-medium">50</span>
-                                </div>
-                                <div class="flex justify-between text-sm">
-                                    <span class="text-gray-500">Department:</span>
-                                    <span class="font-medium">IT</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- HR Manager -->
-                    <div class="bg-white border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-                        <div class="p-6">
-                            <div class="flex items-center justify-between mb-4">
-                                <div class="flex items-center">
-                                    <div class="p-3 rounded-full bg-green-100 text-green-600">
-                                        <i class="fas fa-users text-xl"></i>
-                                    </div>
-                                    <h4 class="text-lg font-semibold text-gray-800 ml-3">HR Manager</h4>
-                                </div>
-                                <div class="flex space-x-2">
-                                    <button class="text-blue-600 hover:text-blue-800">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-                                    <button class="text-red-600 hover:text-red-800">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="space-y-2">
-                                <div class="flex justify-between text-sm">
-                                    <span class="text-gray-500">Employees:</span>
-                                    <span class="font-medium">5</span>
-                                </div>
-                                <div class="flex justify-between text-sm">
-                                    <span class="text-gray-500">Department:</span>
-                                    <span class="font-medium">HR</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Marketing Specialist -->
-                    <div class="bg-white border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
-                        <div class="p-6">
-                            <div class="flex items-center justify-between mb-4">
-                                <div class="flex items-center">
-                                    <div class="p-3 rounded-full bg-purple-100 text-purple-600">
-                                        <i class="fas fa-bullhorn text-xl"></i>
-                                    </div>
-                                    <h4 class="text-lg font-semibold text-gray-800 ml-3">Marketing Specialist</h4>
-                                </div>
-                                <div class="flex space-x-2">
-                                    <button class="text-blue-600 hover:text-blue-800">
-                                        <i class="fas fa-edit"></i>
-                                    </button>
-                                    <button class="text-red-600 hover:text-red-800">
-                                        <i class="fas fa-trash"></i>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="space-y-2">
-                                <div class="flex justify-between text-sm">
-                                    <span class="text-gray-500">Employees:</span>
-                                    <span class="font-medium">20</span>
-                                </div>
-                                <div class="flex justify-between text-sm">
-                                    <span class="text-gray-500">Department:</span>
-                                    <span class="font-medium">Marketing</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Add more job title cards here -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="jobTitlesContainer">
+                    <!-- Job Titles will be dynamically rendered here -->
                 </div>
             </div>
         </div>
@@ -242,23 +146,204 @@
 </div>
 
 <script>
-// Modal functions
-function openModal() {
+const API_BASE_URL = 'http://localhost:5115/api'; // Adjust if your backend runs elsewhere
+
+function getAuthToken() {
+    return localStorage.getItem('authToken');
+}
+
+async function fetchJobTitles() {
+    const token = getAuthToken();
+    if (!token) { window.location.href = 'login.html'; return; }
+
+    try {
+        const response = await fetch(`${API_BASE_URL}/Integration/positions`, {
+             headers: { 'Authorization': `Bearer ${token}` }
+        });
+        if (response.status === 401) { window.location.href = 'login.html'; return; }
+        if (!response.ok) throw new Error('Failed to fetch job titles');
+        
+        const jobTitles = await response.json();
+        
+        const jobTitlesWithPlaceholders = jobTitles.map(jt => ({
+            id: jt.positionId,
+            name: jt.name,
+            department: jt.departmentName || 'N/A',
+            employeeCount: 'N/A',
+            icon: "fa-briefcase",
+            color: "gray"
+        }));
+
+        renderJobTitles(jobTitlesWithPlaceholders);
+        updateJobTitleStats(jobTitles.length);
+
+    } catch (error) {
+        console.error("Error fetching job titles:", error);
+        const container = document.getElementById('jobTitlesContainer');
+        if (container) container.innerHTML = `<p class="text-center col-span-full text-red-500">Failed to load job titles: ${error.message}</p>`;
+        updateJobTitleStats(0);
+    }
+}
+
+function renderJobTitles(jobTitles) {
+    const container = document.getElementById('jobTitlesContainer'); 
+    container.innerHTML = '';
+
+    if (!jobTitles || jobTitles.length === 0) {
+        container.innerHTML = '<p class="text-center col-span-full">No job titles found.</p>';
+        return;
+    }
+
+    jobTitles.forEach(jt => {
+        const card = `
+            <div class="bg-white border rounded-lg overflow-hidden hover:shadow-lg transition-shadow">
+                <div class="p-6">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="flex items-center">
+                            <div class="p-3 rounded-full bg-blue-100 text-blue-600">
+                                <i class="fas fa-briefcase text-xl"></i>
+                            </div>
+                            <h4 class="text-lg font-semibold text-gray-800 ml-3">${jt.name}</h4>
+                        </div>
+                        <div class="flex space-x-2">
+                            <button class="text-blue-600 hover:text-blue-800" onclick="editJobTitle(${jt.id}, '${jt.name}')">
+                                <i class="fas fa-edit"></i>
+                            </button>
+                            <button class="text-red-600 hover:text-red-800" onclick="deleteJobTitle(${jt.id}, '${jt.name}')">
+                                <i class="fas fa-trash"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-500">Employees:</span>
+                            <span class="font-medium">${jt.employeeCount || 'N/A'}</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-gray-500">Department:</span>
+                            <span class="font-medium">${jt.department || 'N/A'}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        container.insertAdjacentHTML('beforeend', card);
+    });
+}
+
+function updateJobTitleStats(count) {
+    const totalStat = document.querySelector('.fa-briefcase.text-xl').closest('.flex.items-center').querySelector('h3');
+    if (totalStat) totalStat.textContent = count;
+}
+
+function openAddJobTitleModal() {
     document.getElementById('addJobTitleModal').classList.remove('hidden');
 }
 
-function closeModal() {
+function closeAddJobTitleModal() {
     document.getElementById('addJobTitleModal').classList.add('hidden');
+    document.getElementById('addJobTitleForm').reset();
 }
 
-// Add event listeners
-document.querySelector('button:contains("Add Job Title")').addEventListener('click', openModal);
+async function handleAddJobTitle(event) {
+    event.preventDefault();
+    const token = getAuthToken(); 
+    if (!token) { window.location.href = 'login.html'; return; }
 
-document.getElementById('addJobTitleForm').addEventListener('submit', function(e) {
-    e.preventDefault();
-    // Add form submission logic here
-    closeModal();
-    alert('Job title added successfully!');
+    const titleNameInput = event.target.querySelector('input[type="text"]');
+    const departmentSelect = event.target.querySelector('select');
+    
+    const titleName = titleNameInput.value;
+
+    if (!titleName) {
+        alert("Job Title name is required.");
+        return;
+    }
+
+    const payload = { 
+        name: titleName
+    };
+
+    try {
+        const response = await fetch(`${API_BASE_URL}/Integration/positions`, { 
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+            body: JSON.stringify(payload) 
+        });
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.message || `Failed to add job title. Status: ${response.status}`);
+        }
+        alert('Job title added successfully!');
+        closeAddJobTitleModal();
+        fetchJobTitles();
+    } catch (error) {
+        console.error("Error adding job title:", error);
+        alert(`Failed to add job title: ${error.message}`);
+    }
+}
+
+function editJobTitle(id, name) { 
+    const newName = prompt(`Enter new name for job title "${name}" (ID: ${id}):`, name);
+    if (newName && newName !== name) {
+        const token = getAuthToken();
+        if (!token) { window.location.href = 'login.html'; return; }
+        
+        fetch(`${API_BASE_URL}/Integration/positions/${id}`, {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
+            body: JSON.stringify({ positionId: id, name: newName })
+        })
+        .then(response => {
+            if (!response.ok) throw new Error('Failed to update job title.');
+            alert(`Job title ${id} updated successfully.`);
+            fetchJobTitles();
+        })
+        .catch(error => {
+            console.error("Error updating job title:", error);
+            alert(`Failed to update job title: ${error.message}`);
+        });
+    }
+}
+
+async function deleteJobTitle(id, name) { 
+    if (!confirm(`Are you sure you want to delete job title "${name}" (ID: ${id})?`)) return;
+
+    const token = getAuthToken();
+    if (!token) { window.location.href = 'login.html'; return; }
+
+    try {
+        const response = await fetch(`${API_BASE_URL}/Integration/positions/${id}`, {
+            method: 'DELETE',
+            headers: { 'Authorization': `Bearer ${token}` }
+        });
+        if (!response.ok) {
+            const errorData = await response.json();
+            throw new Error(errorData.message || `Failed to delete job title. Status: ${response.status}`);
+        }
+        alert(`Job title "${name}" (ID: ${id}) deleted successfully.`);
+        fetchJobTitles();
+    } catch (error) {
+        console.error("Error deleting job title:", error);
+        alert(`Failed to delete job title: ${error.message}`);
+    }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const jobTitlesGrid = document.querySelector('.grid.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-3.gap-6');
+    if (jobTitlesGrid) jobTitlesGrid.id = 'jobTitlesContainer';
+
+    const addJobTitleButton = document.querySelector('button .fa-plus');
+    if (addJobTitleButton) {
+        addJobTitleButton.parentElement.addEventListener('click', openAddJobTitleModal);
+    }
+    
+    const addJobTitleForm = document.getElementById('addJobTitleForm');
+    if (addJobTitleForm) {
+        addJobTitleForm.addEventListener('submit', handleAddJobTitle);
+    }
+
+    fetchJobTitles();
 });
 </script>
 </body>
